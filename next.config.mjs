@@ -1,13 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  async rewrites() {
-    return [
+  images: {
+    remotePatterns: [
       {
-        source: '/api/players-proxy',
-        destination: 'https://api.httpsgamexaglobal.net/api/players',
+        protocol: 'https',
+        hostname: 'files.sitestatic.net',
+        port: '',
+        pathname: '',
       },
-    ];
+    ],
   },
-}
+};
 
-module.exports = nextConfig
+export default nextConfig;
